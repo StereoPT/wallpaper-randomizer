@@ -1,0 +1,26 @@
+{
+  "name": "wallpaper-randomizer",
+  "version": "1.0.0",
+  "description": "Wallpaper Randomizer for MAC",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "Wallpaper",
+    "Randomizer"
+  ],
+  "author": "GuidoSP",
+  "license": "MIT",
+  "dependencies": {
+    "array-shuffle": "^3.0.0",
+    "axios": "^1.2.1",
+    "image-downloader": "^4.3.0",
+    "ora": "^6.1.2",
+    "wallpaper": "^6.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
