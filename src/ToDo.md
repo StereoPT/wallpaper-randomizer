@@ -1,2 +1,6 @@
 # ToDo:
-  - Move to Typescript
+  - Resolve Bug with Filenames
+    - Download Image with regular name
+    - Set Wallpaper
+    - Remove Old
+    - Rename New

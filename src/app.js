@@ -14,6 +14,11 @@ const WALLPAPER_FOLDER_NAME = 'Wallpapers'
 const WALLPAPERS_SUBREDDIT  = 'http://www.reddit.com/r/wallpapers/new.json?sort=new';
 const WALLPAPERS_PATH       = path.join(homedir(), 'Pictures', WALLPAPER_FOLDER_NAME);
 const VALID_EXTENSIONS      = ['jpg', 'png'];
+const ORA_OPTIONS           = {
+  text: ' Fetching Wallpapers!',
+  successText: ' Wallpapers Fetched!',
+  failText: ' Fetching Failed!'
+};
 
 console.log('[Wallpaper Randomizer]');
 console.log();
@@ -32,7 +37,7 @@ try {
 
   const {
     data: { data: { children: subredditPosts }}
-  } = await ora(axios.get(WALLPAPERS_SUBREDDIT), { text: ' Fetching Wallpapers!', successText: ' Wallpapers Fetched!', failText: ' Fetching Failed!'});
+  } = await ora(axios.get(WALLPAPERS_SUBREDDIT), ORA_OPTIONS);
 
   for(const { data: post } of subredditPosts) {
     const imageName = post.url.split('/').pop();
@@ -60,7 +65,8 @@ try {
     url: randomWallpaper.url, dest: randomWallpaper.imageDestination
   });
 
-  setWallpaper(randomWallpaper.imageDestination);
+  await setWallpaper(randomWallpaper.imageDestination);
 } catch(error) {
+  // Some Error was Found!
   console.error(error);
 }
