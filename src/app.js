@@ -1,13 +1,13 @@
 import { homedir } from 'node:os';
 import path from 'node:path';
-import { access, constants, mkdir } from 'node:fs/promises';
+import { access, constants, mkdir, unlink } from 'node:fs/promises';
 
 import { oraPromise as ora } from 'ora';
 import axios from 'axios';
 
 import arrayShuffle from 'array-shuffle';
 import imageDownloader from 'image-downloader';
-import { setWallpaper } from 'wallpaper';
+import { getWallpaper, setWallpaper } from 'wallpaper';
 
 // Constants:
 const WALLPAPER_FOLDER_NAME = 'Wallpapers'
@@ -40,9 +40,9 @@ try {
   } = await ora(axios.get(WALLPAPERS_SUBREDDIT), ORA_OPTIONS);
 
   for(const { data: post } of subredditPosts) {
-    const imageName = post.url.split('/').pop();
-    const imageExt = imageName.split('.').pop();
-    const newImageName = `${todayDate}.${imageExt}`;
+    const imageNameExt = post.url.split('/').pop();
+    const [imageName, imageExt] = imageNameExt.split('.');
+    const newImageName = `${imageName}--${todayDate}.${imageExt}`;
 
     // Invalid Images don't get Added to the 'images' Array
     if(VALID_EXTENSIONS.indexOf(imageExt) === -1) {
@@ -65,7 +65,11 @@ try {
     url: randomWallpaper.url, dest: randomWallpaper.imageDestination
   });
 
+  const oldWallpaper = await getWallpaper();
+  
   await setWallpaper(randomWallpaper.imageDestination);
+  
+  await unlink(oldWallpaper);
 } catch(error) {
   // Some Error was Found!
   console.error(error);
