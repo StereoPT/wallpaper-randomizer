@@ -5,7 +5,7 @@ import { access, constants, mkdir, unlink } from 'node:fs/promises';
 import { oraPromise as ora } from 'ora';
 import axios from 'axios';
 
-import arrayShuffle from 'array-shuffle';
+import random from 'random';
 import imageDownloader from 'image-downloader';
 import { getWallpaper, setWallpaper } from 'wallpaper';
 
@@ -20,19 +20,25 @@ const ORA_OPTIONS           = {
   failText: ' Fetching Failed!'
 };
 
-console.log('[Wallpaper Randomizer]');
-console.log();
-
-// Check for Wallpapers Folder
-try {
-  await access(WALLPAPERS_PATH, constants.F_OK);
-} catch {
-  // Wallpaper Folder isn't Found!
-  await mkdir(WALLPAPERS_PATH);
+// Types || Interfaces
+interface Wallpaper {
+  title: string;
+  url: string;
+  imageName: string;
+  imageDestination: string;
 }
 
-try {
-  let images = [];
+const checkWallpaperFolder = async() => {
+  try {
+    await access(WALLPAPERS_PATH, constants.F_OK);
+  } catch {
+    // Wallpaper Folder isn't Found!
+    await mkdir(WALLPAPERS_PATH);
+  }
+}
+
+const getWallpapers = async() => {
+  let wallpapers:Wallpaper[] = [];
   const todayDate = new Date().toLocaleDateString('pt-PT').replaceAll('/', '_');
 
   const {
@@ -49,7 +55,7 @@ try {
       continue;
     }
     
-    images.push({
+    wallpapers.push({
       title: post.title,
       url: post.url,
       imageName: newImageName,
@@ -57,7 +63,11 @@ try {
     });
   }
 
-  const [ randomWallpaper ] = arrayShuffle(images);
+  return wallpapers;
+}
+
+const downloadRandomWallpaper = async(wallpapers: Wallpaper[]) => {
+  const randomWallpaper = random.choice(wallpapers);
   console.log(` - Current Wallpaper: ${randomWallpaper.title}`);
   console.log(` - Wallpaper Link: ${randomWallpaper.url}`);
   
@@ -65,11 +75,27 @@ try {
     url: randomWallpaper.url, dest: randomWallpaper.imageDestination
   });
 
-  const oldWallpaper = await getWallpaper();
-  
-  await setWallpaper(randomWallpaper.imageDestination);
-  
+  return randomWallpaper.imageDestination;
+}
+
+const switchWallpaper = async(newWallpaper) => {
+  // TODO: Check Wallpaper Day.
+  // Only Remove if days are equal.
+  const oldWallpaper = await getWallpaper();  
+  await setWallpaper(newWallpaper);
   await unlink(oldWallpaper);
+}
+
+console.log('[Wallpaper Randomizer]');
+console.log();
+
+// Check for Wallpapers Folder
+checkWallpaperFolder();
+
+try {
+  const wallpapers = await getWallpapers();
+  const randomWallpaper = await downloadRandomWallpaper(wallpapers);
+  switchWallpaper(randomWallpaper);
 } catch(error) {
   // Some Error was Found!
   console.error(error);
