@@ -20,14 +20,6 @@ const ORA_OPTIONS           = {
   failText: ' Fetching Failed!'
 };
 
-// Types || Interfaces
-interface Wallpaper {
-  title: string;
-  url: string;
-  imageName: string;
-  imageDestination: string;
-}
-
 const checkWallpaperFolder = async() => {
   try {
     await access(WALLPAPERS_PATH, constants.F_OK);
@@ -38,7 +30,7 @@ const checkWallpaperFolder = async() => {
 }
 
 const getWallpapers = async() => {
-  let wallpapers:Wallpaper[] = [];
+  let wallpapers = [];
   const todayDate = new Date().toLocaleDateString('pt-PT').replaceAll('/', '_');
 
   const {
@@ -66,7 +58,7 @@ const getWallpapers = async() => {
   return wallpapers;
 }
 
-const downloadRandomWallpaper = async(wallpapers: Wallpaper[]) => {
+const downloadRandomWallpaper = async(wallpapers) => {
   const randomWallpaper = random.choice(wallpapers);
   console.log(` - Current Wallpaper: ${randomWallpaper.title}`);
   console.log(` - Wallpaper Link: ${randomWallpaper.url}`);
