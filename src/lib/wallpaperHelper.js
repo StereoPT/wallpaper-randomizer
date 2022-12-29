@@ -35,7 +35,8 @@ export const getWallpapers = async() => {
       title: post.title,
       url: post.url,
       imageName: newImageName,
-      imageDestination: path.join(WALLPAPERS_PATH, newImageName)
+      imageDestination: path.join(WALLPAPERS_PATH, newImageName),
+      date: todayDate
     });
   }
 
@@ -51,13 +52,16 @@ export const downloadRandomWallpaper = async(wallpapers) => {
     url: randomWallpaper.url, dest: randomWallpaper.imageDestination
   });
 
-  return randomWallpaper.imageDestination;
+  return randomWallpaper;
 }
 
 export const switchWallpaper = async(newWallpaper) => {
-  // TODO: Check Wallpaper Day.
-  // Only Remove if days are equal.
   const oldWallpaper = await getWallpaper();  
-  await setWallpaper(newWallpaper);
-  await unlink(oldWallpaper);
+  const oldWallpaperDate = oldWallpaper.split('--').pop().split('.')[0];
+  
+  await setWallpaper(newWallpaper.imageDestination);
+
+  if(oldWallpaperDate == newWallpaper.date) {
+    await unlink(oldWallpaper);
+  }
 }
