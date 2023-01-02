@@ -21,3 +21,5 @@ try {
   // Some Error was Found!
   console.error(error);
 }
+
+console.log();
