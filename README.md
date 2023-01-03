@@ -53,7 +53,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]]()
 
 
 
@@ -69,4 +69,4 @@
 [issues-shield]: https://img.shields.io/github/issues/StereoPT/wallpaper-randomizer.svg?style=for-the-badge
 [issues-url]: https://github.com/StereoPT/wallpaper-randomizer/issues
 
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: /images/screenshot.png
