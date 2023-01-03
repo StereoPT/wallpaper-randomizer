@@ -3,6 +3,8 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br />
 <div align="center">
@@ -51,11 +53,21 @@
   </ol>
 </details>
 
+
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]]()
 
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+* [![Node][Node.js]][Node-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -68,5 +80,12 @@
 [stars-url]: https://github.com/StereoPT/repo_name/wallpaper-randomizer
 [issues-shield]: https://img.shields.io/github/issues/StereoPT/wallpaper-randomizer.svg?style=for-the-badge
 [issues-url]: https://github.com/StereoPT/wallpaper-randomizer/issues
+[license-shield]: https://img.shields.io/github/license/StereoPT/wallpaper-randomizer.svg?style=for-the-badge
+[license-url]: https://github.com/StereoPT/repo_name/blob/master/LICENSE.md
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/guidosp
 
 [product-screenshot]: /images/screenshot.png
+
+[Node.js]: https://img.shields.io/badge/node.js-026e00?style=for-the-badge&logo=nodedotjs&logoColor=white
+[Node-url]: https://nodejs.org/
