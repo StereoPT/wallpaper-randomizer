@@ -16,7 +16,7 @@ try {
   const wallpapers = await getWallpapers();
   const randomWallpaper = await downloadRandomWallpaper(wallpapers);
   switchWallpaper(randomWallpaper);
-  notifyWallpaperChange();
+  notifyWallpaperChange(randomWallpaper);
 } catch(error) {
   // Some Error was Found!
   console.error(error);
