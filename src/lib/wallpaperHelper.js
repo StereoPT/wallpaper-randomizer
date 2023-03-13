@@ -17,9 +17,10 @@ export const getWallpapers = async() => {
   let wallpapers = [];
   const todayDate = new Date().toLocaleDateString('pt-PT').replaceAll('/', '_');
 
+  const chooseSubreddit = random.choice(WALLPAPERS_SUBREDDIT);
   const {
     data: { data: { children: subredditPosts }}
-  } = await ora(axios.get(WALLPAPERS_SUBREDDIT), ORA_OPTIONS);
+  } = await ora(axios.get(chooseSubreddit), ORA_OPTIONS);
 
   for(const { data: post } of subredditPosts) {
     const imageNameExt = post.url.split('/').pop();
