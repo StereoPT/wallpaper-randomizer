@@ -7,7 +7,9 @@ export const notifyWallpaperChange = (randomWallpaper) => {
   // TODO: Icon doesn't Work
   notifier.notify({
     title: 'Wallpaper Randomizer',
-    message: randomWallpaper.title,
+    message:
+    `${randomWallpaper.title}
+    From: ${randomWallpaper.subreddit}`,
     contentImage: iconPath,
     icon: iconPath,
     timeout: 2
