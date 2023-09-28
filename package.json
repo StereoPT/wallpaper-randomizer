@@ -15,14 +15,14 @@
   "author": "GuidoSP",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.2.1",
+    "axios": "^1.5.1",
     "image-downloader": "^4.3.0",
     "node-notifier": "^10.0.1",
-    "ora": "^6.1.2",
+    "ora": "^7.0.1",
     "random": "^4.1.0",
-    "wallpaper": "^6.1.1"
+    "wallpaper": "^7.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^3.0.1"
   }
 }
