@@ -13,7 +13,7 @@ export const WALLPAPERS_PATH = path.join(
   'Pictures',
   WALLPAPER_FOLDER_NAME
 );
-export const VALID_EXTENSIONS = ['jpg', 'png'];
+export const VALID_EXTENSIONS = ['jpg', 'png', 'jpeg'];
 export const ORA_OPTIONS = {
   text: ' Fetching Wallpapers!',
   successText: ' Wallpapers Fetched!',
