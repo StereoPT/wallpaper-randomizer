@@ -54,30 +54,25 @@
   </ol>
 </details>
 
-
-
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]]()
 
 Wallpaper-Randomizer is a simple Script that will allow you to quickly change your wallpaper to a random one.
-The wallpapers at the moment come from the *wallpapers* subreddit, however new sources might be added in the future.
+The wallpapers at the moment come from the _wallpapers_ subreddit, however new sources might be added in the future.
 Why Random Wallpapers:
- - I like change from time to time
- - Interesting wallpapers you would never even consider
- - I don't like to browse the internet for a wallpaper
+
+- I like change from time to time
+- Interesting wallpapers you would never even consider
+- I don't like to browse the internet for a wallpaper
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
-* [![Node][Node.js]][Node-url]
+- [![Node][Node.js]][Node-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## Getting Started
 
@@ -85,40 +80,41 @@ Follow these steps in order to setup the project locally.
 
 ### Prerequisites
 
-* [node.js](https://nodejs.org/en/)
+- [node.js](https://nodejs.org/en/)
 
 ### Installation
 
 1. Clone the repo
-  ```sh
-  git clone https://github.com/StereoPT/wallpaper-randomizer.git
-  ```
+
+```sh
+git clone https://github.com/StereoPT/wallpaper-randomizer.git
+```
+
 2. Install NPM Packages
-  ```sh
-  npm install
-  ```
+
+```sh
+npm install
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## Usage
 
 To run the script:
-  ```sh
-  npm start
-  ```
+
+```sh
+npm start
+```
 
 I recommend creating a terminal shortcut:
-  ```sh
-  alias wallpaper="node <path_to_repo>/src/app.js" 
-  ```
+
+```sh
+alias wallpaper="node <path_to_repo>/src/app.js"
+```
 
 Or even create a cronjob, to run every day.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## Roadmap
 
@@ -127,8 +123,6 @@ Or even create a cronjob, to run every day.
 See the [open issues](https://github.com/StereoPT/wallpaper-randomizer/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## Contributing
 
@@ -145,18 +139,16 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.md` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Your Name - [@stereopt](https://twitter.com/stereopt) - stereopt@gmail.com
@@ -165,18 +157,17 @@ Project Link: [https://github.com/StereoPT/wallpaper-randomizer](https://github.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* [Wallpaper NPM Package](https://github.com/sindresorhus/wallpaper)
-* [/r/wallpapers](https://www.reddit.com/r/wallpapers/)
+- [Wallpaper NPM Package](https://github.com/sindresorhus/wallpaper)
+- [/r/wallpapers](https://www.reddit.com/r/wallpapers/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/StereoPT/wallpaper-randomizer.svg?style=for-the-badge
 [contributors-url]: https://github.com/StereoPT/wallpaper-randomizer/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/StereoPT/wallpaper-randomizer.svg?style=for-the-badge
@@ -189,8 +180,6 @@ Project Link: [https://github.com/StereoPT/wallpaper-randomizer](https://github.
 [license-url]: https://github.com/StereoPT/repo_name/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/guidosp
-
 [product-screenshot]: /images/screenshot.png
-
 [Node.js]: https://img.shields.io/badge/node.js-026e00?style=for-the-badge&logo=nodedotjs&logoColor=white
 [Node-url]: https://nodejs.org/

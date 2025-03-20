@@ -4,6 +4,7 @@ import path from 'node:path';
 // Constants:
 export const WALLPAPER_FOLDER_NAME = 'Wallpapers';
 export const WALLPAPERS_SUBREDDIT = [
+  'wallpaper',
   'wallpapers',
   'midjourney',
   'stablediffusion',
